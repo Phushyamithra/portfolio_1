@@ -27,7 +27,7 @@ const experienceData = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="section fade-in">
+    <section id="experience" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Experience</p>
         <h2>

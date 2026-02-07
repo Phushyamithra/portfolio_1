@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="section fade-in">
+    <section id="about" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Profile</p>
         <h2>

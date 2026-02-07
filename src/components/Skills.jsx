@@ -18,7 +18,7 @@ const skillBlocks = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="section fade-in">
+    <section id="skills" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Skills</p>
         <h2>

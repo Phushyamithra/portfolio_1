@@ -3,7 +3,15 @@ const metaItems = [
   { label: "Location", value: "Hyderabad, Telangana" },
 ];
 
-export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
+export default function Hero({
+  navLinks,
+  mode,
+  themeLabel,
+  menuOpen,
+  onToggleMenu,
+  onCloseMenu,
+  onToggleMode,
+}) {
   return (
     <header className="hero" id="top">
       <aside className="hero-sidebar">
@@ -14,46 +22,16 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
             <p className="brand-subtitle">Senior Salesforce Developer</p>
           </div>
         </div>
-        <div className="menu-intro">
-          <p className="menu-label">Menu</p>
-          <p className="menu-desc">
-            Enterprise Salesforce delivery, automation, and performance
-            engineering.
-          </p>
-        </div>
-        <nav className="hero-nav" aria-label="Primary">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              <span className="nav-icon" aria-hidden="true">
-                {link.icon}
-              </span>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <div className="menu-meta">
-          <div>
-            <span>Base</span>
-            <strong>Hyderabad, IN</strong>
-          </div>
-          <div>
-            <span>Focus</span>
-            <strong>Salesforce Platforms</strong>
-          </div>
-        </div>
-        <div className="mode-switch" aria-live="polite">
-          <span className="mode-label">{themeLabel}</span>
-          <button type="button" className="toggle" onClick={onToggleMode}>
-            <span className="toggle-track" aria-hidden="true">
-              <span className={`toggle-thumb ${mode}`}>
-                <span className="toggle-icon">
-                  {mode === "light" ? "☀️" : "🌙"}
-                </span>
-              </span>
-            </span>
-            <span className="toggle-text">Switch mode</span>
-          </button>
-        </div>
+        <button
+          type="button"
+          className="burger"
+          aria-expanded={menuOpen}
+          onClick={onToggleMenu}
+        >
+          <span className="burger-line"></span>
+          <span className="burger-line"></span>
+          <span className="burger-line"></span>
+        </button>
       </aside>
 
       <div className="hero-main">
@@ -93,6 +71,10 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
               Contact Me
             </button>
           </div>
+          <div className="scroll-indicator" aria-hidden="true">
+            <span className="mouse"></span>
+            <span className="scroll-text">Scroll</span>
+          </div>
         </div>
         <div className="hero-image" aria-hidden="true">
           <img src="/profile-placeholder.svg" alt="" />
@@ -105,6 +87,54 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
               <strong>Enterprise Delivery</strong>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={`menu-panel ${menuOpen ? "open" : ""}`}>
+        <div className="menu-panel-header">
+          <div className="menu-intro">
+            <p className="menu-label">Menu</p>
+            <p className="menu-desc">
+              Enterprise Salesforce delivery, automation, and performance
+              engineering.
+            </p>
+          </div>
+          <button type="button" className="close-btn" onClick={onCloseMenu}>
+            ✕
+          </button>
+        </div>
+        <nav className="hero-nav" aria-label="Primary">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} onClick={onCloseMenu}>
+              <span className="nav-icon" aria-hidden="true">
+                {link.icon}
+              </span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className="menu-meta">
+          <div>
+            <span>Base</span>
+            <strong>Hyderabad, IN</strong>
+          </div>
+          <div>
+            <span>Focus</span>
+            <strong>Salesforce Platforms</strong>
+          </div>
+        </div>
+        <div className="mode-switch" aria-live="polite">
+          <span className="mode-label">{themeLabel}</span>
+          <button type="button" className="toggle" onClick={onToggleMode}>
+            <span className="toggle-track" aria-hidden="true">
+              <span className={`toggle-thumb ${mode}`}>
+                <span className="toggle-icon">
+                  {mode === "light" ? "☀️" : "🌙"}
+                </span>
+              </span>
+            </span>
+            <span className="toggle-text">Switch mode</span>
+          </button>
         </div>
       </div>
     </header>

@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="section fade-in">
+    <section id="contact" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Contact</p>
         <h2>

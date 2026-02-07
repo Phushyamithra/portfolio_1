@@ -1,6 +1,6 @@
 export default function Education() {
   return (
-    <section id="education" className="section fade-in">
+    <section id="education" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Education</p>
         <h2>

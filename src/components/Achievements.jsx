@@ -19,7 +19,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="section fade-in">
+    <section id="achievements" className="section reveal">
       <div className="section-header">
         <p className="section-eyebrow">Achievements</p>
         <h2>

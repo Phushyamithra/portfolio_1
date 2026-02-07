@@ -82,6 +82,7 @@ img {
   flex-direction: column;
   gap: 2rem;
   position: relative;
+  justify-content: space-between;
 }
 
 .hero-sidebar::after {
@@ -94,6 +95,25 @@ img {
   background-image: radial-gradient(#ffb703 2px, transparent 2px);
   background-size: 12px 12px;
   opacity: 0.4;
+}
+
+.burger {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.burger-line {
+  height: 2px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 999px;
 }
 
 .brand {
@@ -189,6 +209,42 @@ img {
   margin-top: 0.3rem;
   color: #ffffff;
   font-weight: 600;
+}
+
+.menu-panel {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: min(340px, 85vw);
+  background: #023047;
+  color: #f8f5f0;
+  padding: 2.5rem 2rem;
+  display: grid;
+  gap: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 20;
+  box-shadow: 20px 0 40px rgba(2, 48, 71, 0.4);
+}
+
+.menu-panel.open {
+  transform: translateX(0);
+}
+
+.menu-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .mode-switch {
@@ -356,6 +412,42 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.mouse {
+  width: 24px;
+  height: 36px;
+  border-radius: 14px;
+  border: 2px solid var(--text);
+  position: relative;
+}
+
+.mouse::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 4px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--text);
+  transform: translateX(-50%);
+  animation: wheel 1.6s infinite;
+}
+
+.scroll-text {
+  font-weight: 600;
 }
 
 .btn {
@@ -586,6 +678,12 @@ img {
   border-radius: 50%;
   display: grid;
   place-items: center;
+  color: var(--accent);
+}
+
+.profile-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .contact-grid {
@@ -637,6 +735,17 @@ textarea {
   animation: fadeIn 0.8s ease both;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -645,6 +754,21 @@ textarea {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes wheel {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
   }
 }
 
