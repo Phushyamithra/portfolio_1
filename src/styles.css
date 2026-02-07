@@ -11,8 +11,8 @@
 }
 
 body {
-  background: #f4efe8;
-  color: #1c1f26;
+  background: #8ecae6;
+  color: #023047;
   min-height: 100vh;
 }
 
@@ -32,48 +32,50 @@ img {
 }
 
 .app[data-theme="light"] {
-  --surface: #f4efe8;
-  --text: #1c1f26;
-  --muted: #5b5f6a;
+  --surface: #8ecae6;
+  --text: #023047;
+  --muted: rgba(2, 48, 71, 0.68);
   --card: #ffffff;
-  --accent: #111827;
-  --border: #e1d8cd;
-  --button: #1c1f26;
+  --accent: #023047;
+  --border: rgba(2, 48, 71, 0.12);
+  --button: #023047;
   --button-text: #ffffff;
   --ghost: transparent;
-  --ghost-text: #1c1f26;
-  --accent-soft: #f9d7b5;
-  --accent-strong: #e07a5f;
-  --accent-cool: #5f7aff;
-  --accent-mint: #5dbda6;
+  --ghost-text: #023047;
+  --accent-soft: #ffb703;
+  --accent-strong: #fb8500;
+  --accent-cool: #219ebc;
+  --accent-mint: #8ecae6;
 }
 
 .app[data-theme="dark"] {
   color-scheme: dark;
-  --surface: #131416;
-  --text: #f5f5f5;
-  --muted: #c2c5cc;
-  --card: #1d1f25;
-  --accent: #f3f3f3;
-  --border: #2b2f36;
-  --button: #f3f3f3;
-  --button-text: #121318;
+  --surface: #021b26;
+  --text: #f7f7f7;
+  --muted: rgba(247, 247, 247, 0.68);
+  --card: #0b2a3a;
+  --accent: #f7f7f7;
+  --border: rgba(142, 202, 230, 0.2);
+  --button: #ffb703;
+  --button-text: #023047;
   --ghost: transparent;
-  --ghost-text: #f5f5f5;
-  --accent-soft: #3a2a24;
-  --accent-strong: #f4a261;
-  --accent-cool: #7bd3ff;
-  --accent-mint: #7ee7c7;
+  --ghost-text: #f7f7f7;
+  --accent-soft: #ffb703;
+  --accent-strong: #fb8500;
+  --accent-cool: #219ebc;
+  --accent-mint: #8ecae6;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(220px, 280px) 1fr;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
   min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .hero-sidebar {
-  background: linear-gradient(160deg, #111827 0%, #1f2937 45%, #0b1220 100%);
+  background: #023047;
   color: #f8f5f0;
   padding: 2.5rem 2rem;
   display: flex;
@@ -89,9 +91,9 @@ img {
   right: 24px;
   width: 120px;
   height: 120px;
-  background-image: radial-gradient(#f4c27a 2px, transparent 2px);
+  background-image: radial-gradient(#ffb703 2px, transparent 2px);
   background-size: 12px 12px;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .brand {
@@ -101,8 +103,8 @@ img {
 }
 
 .brand-mark {
-  background: #f6efe7;
-  color: #141821;
+  background: #ffb703;
+  color: #023047;
   font-weight: 700;
   border-radius: 12px;
   padding: 0.6rem 0.8rem;
@@ -143,13 +145,14 @@ img {
 }
 
 .hero-nav a {
-  color: #c9c5bf;
-  transition: color 0.3s ease;
+  color: #e2edf3;
+  transition: color 0.3s ease, background 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.2rem 0.4rem;
+  gap: 0.7rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 12px;
+  font-weight: 600;
 }
 
 .hero-nav a:hover {
@@ -158,13 +161,13 @@ img {
 }
 
 .nav-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  font-size: 0.9rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1rem;
 }
 
 .menu-meta {
@@ -211,17 +214,17 @@ img {
 }
 
 .toggle-track {
-  width: 44px;
-  height: 24px;
-  background: #2f3540;
+  width: 48px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   position: relative;
 }
 
 .toggle-thumb {
-  width: 20px;
-  height: 20px;
-  background: #f6efe7;
+  width: 22px;
+  height: 22px;
+  background: #ffb703;
   border-radius: 50%;
   position: absolute;
   top: 3px;
@@ -229,11 +232,11 @@ img {
   transition: transform 0.3s ease;
   display: grid;
   place-items: center;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 
 .toggle-thumb.dark {
-  transform: translateX(18px);
+  transform: translateX(20px);
 }
 
 .toggle-icon {
@@ -246,17 +249,16 @@ img {
 
 .hero-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
   align-items: center;
-  padding: 4rem clamp(2rem, 6vw, 6rem);
-  gap: 3rem;
-  background: radial-gradient(
-      circle at top right,
-      rgba(224, 122, 95, 0.15),
-      transparent 55%
-    ),
-    var(--surface);
+  padding: 4rem clamp(2rem, 6vw, 5rem);
+  gap: 2.5rem;
+  background: linear-gradient(135deg, #8ecae6 0%, #d7f0fa 50%, #ffb703 100%);
   position: relative;
+}
+
+.app[data-theme="dark"] .hero-main {
+  background: linear-gradient(135deg, #022435 0%, #023047 55%, #219ebc 100%);
 }
 
 .hero-main::after {
@@ -268,7 +270,7 @@ img {
   height: 160px;
   background-image: radial-gradient(#ffffff 2px, transparent 2px);
   background-size: 12px 12px;
-  opacity: 0.2;
+  opacity: 0.35;
 }
 
 .hero-topline {
@@ -277,7 +279,7 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  color: var(--muted);
+  color: var(--text);
 }
 
 .hero-tag {
@@ -290,13 +292,13 @@ img {
 
 .mini-btn {
   background: #ffffff;
-  color: #1c1f26;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #023047;
+  border: 1px solid rgba(2, 48, 71, 0.12);
   border-radius: 999px;
   padding: 0.5rem 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(2, 48, 71, 0.15);
 }
 
 .hero-content {
@@ -323,8 +325,12 @@ img {
 
 .hero-summary {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: rgba(2, 48, 71, 0.78);
   max-width: 520px;
+}
+
+.app[data-theme="dark"] .hero-summary {
+  color: var(--muted);
 }
 
 .hero-meta {
@@ -380,13 +386,14 @@ img {
 .hero-image {
   position: relative;
   justify-self: center;
-  max-width: 340px;
+  max-width: 360px;
+  width: 100%;
 }
 
 .hero-image img {
   border-radius: 28px;
-  border: 6px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+  border: 6px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 28px 50px rgba(2, 48, 71, 0.2);
 }
 
 .hero-badge {
@@ -400,23 +407,26 @@ img {
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  box-shadow: 0 18px 32px rgba(15, 15, 15, 0.15);
+  box-shadow: 0 18px 32px rgba(2, 48, 71, 0.15);
 }
 
 .badge-icon {
   background: linear-gradient(135deg, var(--accent-strong), var(--accent-cool));
   color: #ffffff;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 12px;
   display: grid;
   place-items: center;
+  font-size: 1.05rem;
 }
 
 .main-content {
   padding: 0 clamp(1.5rem, 5vw, 6rem) 4rem;
   display: grid;
   gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .section {
@@ -449,11 +459,11 @@ img {
   background: var(--accent-soft);
   color: var(--accent);
   border-radius: 12px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .section-body {
@@ -469,7 +479,7 @@ img {
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 1.8rem;
-  box-shadow: 0 18px 30px rgba(15, 15, 15, 0.05);
+  box-shadow: 0 18px 30px rgba(2, 48, 71, 0.08);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -513,7 +523,7 @@ img {
 }
 
 .pill {
-  background: rgba(224, 122, 95, 0.18);
+  background: rgba(255, 183, 3, 0.24);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -538,14 +548,14 @@ img {
 }
 
 .icon-chip {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--accent-cool), var(--accent-mint));
-  color: #111827;
+  color: #023047;
   display: grid;
   place-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .tag-list {
@@ -556,7 +566,7 @@ img {
 }
 
 .tag {
-  background: rgba(95, 122, 255, 0.16);
+  background: rgba(33, 158, 188, 0.2);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
@@ -569,10 +579,10 @@ img {
 }
 
 .profile-icon {
-  font-size: 1.4rem;
-  background: rgba(95, 122, 255, 0.18);
-  width: 40px;
-  height: 40px;
+  font-size: 1.3rem;
+  background: rgba(33, 158, 188, 0.22);
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -593,12 +603,13 @@ img {
 }
 
 .inline-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(224, 122, 95, 0.2);
+  background: rgba(255, 183, 3, 0.22);
   display: grid;
   place-items: center;
+  font-size: 1rem;
 }
 
 .contact-form {
@@ -670,6 +681,10 @@ textarea {
   .hero-topline {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
   }
 }
 
