@@ -1,8 +1,20 @@
 const achievements = [
-  "Salesforce Certified Developer",
-  "Salesforce Certified Associate",
-  "Client appreciation from Chevron",
-  "Solved 500+ coding problems",
+  {
+    title: "Salesforce Certified Developer",
+    icon: "✅",
+  },
+  {
+    title: "Salesforce Certified Associate",
+    icon: "🎯",
+  },
+  {
+    title: "Client appreciation from Chevron",
+    icon: "🤝",
+  },
+  {
+    title: "Solved 500+ coding problems",
+    icon: "🧠",
+  },
 ];
 
 export default function Achievements() {
@@ -10,13 +22,23 @@ export default function Achievements() {
     <section id="achievements" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Achievements</p>
-        <h2>Professional Highlights</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            🏅
+          </span>
+          Professional Highlights
+        </h2>
       </div>
       <div className="card-grid">
         {achievements.map((item) => (
-          <div key={item} className="card achievement-card">
-            <h3>{item}</h3>
-            <p>Recognized for consistent delivery and impact.</p>
+          <div key={item.title} className="card achievement-card">
+            <span className="icon-chip" aria-hidden="true">
+              {item.icon}
+            </span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>Recognized for consistent delivery and impact.</p>
+            </div>
           </div>
         ))}
       </div>

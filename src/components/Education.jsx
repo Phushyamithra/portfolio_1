@@ -3,7 +3,12 @@ export default function Education() {
     <section id="education" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Education</p>
-        <h2>Academic Background</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            🎓
+          </span>
+          Academic Background
+        </h2>
       </div>
       <div className="card timeline-card">
         <div>

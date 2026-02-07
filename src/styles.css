@@ -42,6 +42,10 @@ img {
   --button-text: #ffffff;
   --ghost: transparent;
   --ghost-text: #1c1f26;
+  --accent-soft: #f9d7b5;
+  --accent-strong: #e07a5f;
+  --accent-cool: #5f7aff;
+  --accent-mint: #5dbda6;
 }
 
 .app[data-theme="dark"] {
@@ -56,6 +60,10 @@ img {
   --button-text: #121318;
   --ghost: transparent;
   --ghost-text: #f5f5f5;
+  --accent-soft: #3a2a24;
+  --accent-strong: #f4a261;
+  --accent-cool: #7bd3ff;
+  --accent-mint: #7ee7c7;
 }
 
 .hero {
@@ -65,7 +73,7 @@ img {
 }
 
 .hero-sidebar {
-  background: #141821;
+  background: linear-gradient(160deg, #111827 0%, #1f2937 45%, #10141b 100%);
   color: #f8f5f0;
   padding: 2.5rem 2rem;
   display: flex;
@@ -108,10 +116,23 @@ img {
 .hero-nav a {
   color: #c9c5bf;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .hero-nav a:hover {
   color: #ffffff;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
 }
 
 .mode-switch {
@@ -145,18 +166,25 @@ img {
 }
 
 .toggle-thumb {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background: #f6efe7;
   border-radius: 50%;
   position: absolute;
   top: 3px;
   left: 4px;
   transition: transform 0.3s ease;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
 }
 
 .toggle-thumb.dark {
   transform: translateX(18px);
+}
+
+.toggle-icon {
+  line-height: 1;
 }
 
 .toggle-text {
@@ -169,7 +197,12 @@ img {
   align-items: center;
   padding: 4rem clamp(2rem, 6vw, 6rem);
   gap: 3rem;
-  background: var(--surface);
+  background: radial-gradient(
+      circle at top right,
+      rgba(224, 122, 95, 0.15),
+      transparent 55%
+    ),
+    var(--surface);
 }
 
 .hero-content {
@@ -258,8 +291,32 @@ img {
 
 .hero-image img {
   border-radius: 28px;
-  border: 6px solid rgba(255, 255, 255, 0.5);
+  border: 6px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  box-shadow: 0 18px 32px rgba(15, 15, 15, 0.15);
+}
+
+.badge-icon {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-cool));
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
 }
 
 .main-content {
@@ -289,6 +346,20 @@ img {
 
 .section h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-icon {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 12px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
 }
 
 .section-body {
@@ -348,10 +419,11 @@ img {
 }
 
 .pill {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(224, 122, 95, 0.18);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
+  color: var(--accent);
 }
 
 .card-grid {
@@ -365,6 +437,23 @@ img {
   color: var(--muted);
 }
 
+.achievement-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.icon-chip {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-cool), var(--accent-mint));
+  color: #111827;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -373,7 +462,7 @@ img {
 }
 
 .tag {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(95, 122, 255, 0.16);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
@@ -387,7 +476,7 @@ img {
 
 .profile-icon {
   font-size: 1.4rem;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(95, 122, 255, 0.18);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -404,6 +493,18 @@ img {
 .contact-card p {
   margin-top: 0.8rem;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inline-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(224, 122, 95, 0.2);
+  display: grid;
+  place-items: center;
 }
 
 .contact-form {

@@ -3,7 +3,12 @@ export default function About() {
     <section id="about" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Profile</p>
-        <h2>About Me</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            👤
+          </span>
+          About Me
+        </h2>
       </div>
       <div className="section-body">
         <p>

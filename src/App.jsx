@@ -9,13 +9,13 @@ import Links from "./components/Links.jsx";
 import Contact from "./components/Contact.jsx";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Achievements", href: "#achievements" },
-  { label: "Skills", href: "#skills" },
-  { label: "Profiles", href: "#profiles" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", icon: "◎" },
+  { label: "Education", href: "#education", icon: "🎓" },
+  { label: "Experience", href: "#experience", icon: "💼" },
+  { label: "Achievements", href: "#achievements", icon: "🏆" },
+  { label: "Skills", href: "#skills", icon: "🧩" },
+  { label: "Profiles", href: "#profiles", icon: "🔗" },
+  { label: "Contact", href: "#contact", icon: "✉️" },
 ];
 
 export default function App() {

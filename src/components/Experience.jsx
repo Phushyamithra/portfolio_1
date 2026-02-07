@@ -30,7 +30,12 @@ export default function Experience() {
     <section id="experience" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Experience</p>
-        <h2>Leadership in Enterprise Delivery</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            💼
+          </span>
+          Leadership in Enterprise Delivery
+        </h2>
       </div>
       <div className="experience-grid">
         {experienceData.map((job) => (

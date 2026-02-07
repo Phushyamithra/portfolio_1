@@ -3,13 +3,28 @@ export default function Contact() {
     <section id="contact" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Contact</p>
-        <h2>Let’s Connect</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            ✉️
+          </span>
+          Let’s Connect
+        </h2>
       </div>
       <div className="contact-grid">
         <div className="card contact-card">
           <h3>Reach Out Directly</h3>
-          <p>Email: gauriphushyamithra@gmail.com</p>
-          <p>Phone: +91 9618358698</p>
+          <p>
+            <span className="inline-icon" aria-hidden="true">
+              📧
+            </span>
+            gauriphushyamithra@gmail.com
+          </p>
+          <p>
+            <span className="inline-icon" aria-hidden="true">
+              📞
+            </span>
+            +91 9618358698
+          </p>
           <p>
             Open to global enterprise Salesforce roles and complex integration
             programs.

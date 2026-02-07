@@ -21,7 +21,12 @@ export default function Skills() {
     <section id="skills" className="section fade-in">
       <div className="section-header">
         <p className="section-eyebrow">Skills</p>
-        <h2>Technical Expertise</h2>
+        <h2>
+          <span className="section-icon" aria-hidden="true">
+            🧩
+          </span>
+          Technical Expertise
+        </h2>
       </div>
       <div className="card-grid">
         {skillBlocks.map((block) => (

@@ -17,6 +17,9 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
         <nav className="hero-nav" aria-label="Primary">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>
+              <span className="nav-icon" aria-hidden="true">
+                {link.icon}
+              </span>
               {link.label}
             </a>
           ))}
@@ -25,11 +28,13 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
           <span className="mode-label">{themeLabel}</span>
           <button type="button" className="toggle" onClick={onToggleMode}>
             <span className="toggle-track" aria-hidden="true">
-              <span className={`toggle-thumb ${mode}`}></span>
+              <span className={`toggle-thumb ${mode}`}>
+                <span className="toggle-icon">
+                  {mode === "light" ? "☀️" : "🌙"}
+                </span>
+              </span>
             </span>
-            <span className="toggle-text">
-              Switch to {mode === "light" ? "Dark" : "Light"}
-            </span>
+            <span className="toggle-text">Switch mode</span>
           </button>
         </div>
       </aside>
@@ -65,6 +70,15 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
         </div>
         <div className="hero-image" aria-hidden="true">
           <img src="/profile-placeholder.svg" alt="" />
+          <div className="hero-badge">
+            <span className="badge-icon" aria-hidden="true">
+              ✨
+            </span>
+            <div>
+              <p>Salesforce Ecosystem</p>
+              <strong>Enterprise Delivery</strong>
+            </div>
+          </div>
         </div>
       </div>
     </header>
