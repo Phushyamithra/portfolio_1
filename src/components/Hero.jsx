@@ -14,6 +14,13 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
             <p className="brand-subtitle">Senior Salesforce Developer</p>
           </div>
         </div>
+        <div className="menu-intro">
+          <p className="menu-label">Menu</p>
+          <p className="menu-desc">
+            Enterprise Salesforce delivery, automation, and performance
+            engineering.
+          </p>
+        </div>
         <nav className="hero-nav" aria-label="Primary">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>
@@ -24,6 +31,16 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
             </a>
           ))}
         </nav>
+        <div className="menu-meta">
+          <div>
+            <span>Base</span>
+            <strong>Hyderabad, IN</strong>
+          </div>
+          <div>
+            <span>Focus</span>
+            <strong>Salesforce Platforms</strong>
+          </div>
+        </div>
         <div className="mode-switch" aria-live="polite">
           <span className="mode-label">{themeLabel}</span>
           <button type="button" className="toggle" onClick={onToggleMode}>
@@ -40,6 +57,15 @@ export default function Hero({ navLinks, mode, themeLabel, onToggleMode }) {
       </aside>
 
       <div className="hero-main">
+        <div className="hero-topline">
+          <div>
+            <p className="hero-tag">Senior Salesforce Developer</p>
+            <p className="hero-tag muted">Specializing in enterprise systems</p>
+          </div>
+          <button className="mini-btn" type="button">
+            Download CV
+          </button>
+        </div>
         <div className="hero-content">
           <p className="eyebrow">Senior Salesforce Developer</p>
           <h1>
